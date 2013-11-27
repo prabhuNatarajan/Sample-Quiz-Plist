@@ -11,6 +11,9 @@
 
 @interface PlayViewController ()
 
+@property (nonatomic) int total;
+@property (nonatomic) int numberAttended;
+
 @end
 
 @implementation PlayViewController
@@ -62,17 +65,31 @@
     self.currentQuestion = -1;
     [self showNextQuestion];
     self.Score = 0;
-    self.ScoreLabel.text = [NSString stringWithFormat:@"Score: %i", self.Score];
+    self.numberAttended = 0;
+    self.total = [self.questions count];
+    NSLog(@"Total:%i", self.total);
 }
 
 - (void)showNextQuestion
 {
     self.currentQuestion ++;
+    self.numberAttended ++;
     if (self.currentQuestion < [self.questions count])
     {
+        float percent = (((float) self.numberAttended / self.total)*100);
+        if (percent == INFINITY)
+        {
+            self.ScoreLabel.text = [NSString stringWithFormat:@"Score: %i  progress: 0.00", self.Score];
+
+        }
+        else
+        {
+        self.ScoreLabel.text = [NSString stringWithFormat:@"Score: %i  progress: %.2f", self.Score, percent];
+        }
+        
         NSDictionary *nextQuestion = [self.questions objectAtIndex:self.currentQuestion];
         self.answer = [nextQuestion objectForKey:@"Ans"];
-        self.QuestionTitleButton.text = [nextQuestion objectForKey:@"Title"];
+        self.QuestionTitleLabel.text = [nextQuestion objectForKey:@"Title"];
         self.AnswerLabelA.text = [nextQuestion objectForKey:@"A"];
         self.AnswerLabelB.text = [nextQuestion objectForKey:@"B"];
         if ([nextQuestion objectForKey:@"C"])
@@ -102,11 +119,19 @@
     {
         UIAlertView *gameOver = [[UIAlertView alloc]initWithTitle:@"Finished" message:@"Hurray! No more Questions" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
         [gameOver show];
-        self.backButton.hidden = NO;
+        
         self.ButtonA.hidden = YES;
         self.ButtonB.hidden = YES;
         self.ButtonC.hidden = YES;
         self.ButtonD.hidden = YES;
+        self.backButton.hidden = NO;
+        self.skipButton.hidden = YES;
+        self.AnswerLabelA.hidden = YES;
+        self.AnswerLabelB.hidden = YES;
+        self.AnswerLabelC.hidden = YES;
+        self.AnswerLabelD.hidden = YES;
+        self.QuestionTitleLabel.hidden = YES;
+        [self.backButton setTitle:@"Choose Another Subject" forState:UIControlStateNormal];
     }
 }
 
@@ -125,9 +150,7 @@
 {
     if ([self.answer isEqualToString:@"A"])
     {
-        self.numberCorrect ++;
         self.Score ++;
-        self.ScoreLabel.text = [NSString stringWithFormat:@"Score: %i", self.Score];
     }
     [self showNextQuestion];
 }
@@ -136,9 +159,7 @@
 {
     if ([self.answer isEqualToString:@"B"])
     {
-        self.numberCorrect ++;
         self.Score ++;
-        self.ScoreLabel.text = [NSString stringWithFormat:@"Score: %i", self.Score];
     }
     [self showNextQuestion];
 }
@@ -147,9 +168,7 @@
 {
     if ([self.answer isEqualToString:@"C"])
     {
-        self.numberCorrect ++;
         self.Score ++;
-        self.ScoreLabel.text = [NSString stringWithFormat:@"Score: %i", self.Score];
     }
     [self showNextQuestion];
 }
@@ -158,10 +177,14 @@
 {
     if ([self.answer isEqualToString:@"D"])
     {
-        self.numberCorrect ++;
         self.Score ++;
-        self.ScoreLabel.text = [NSString stringWithFormat:@"Score: %i", self.Score];
     }
+    [self showNextQuestion];
+}
+
+- (IBAction)SkipButton:(id)sender
+{
+    self.numberAttended --;
     [self showNextQuestion];
 }
 

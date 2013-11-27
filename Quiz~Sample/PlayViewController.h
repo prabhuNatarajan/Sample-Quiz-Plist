@@ -14,9 +14,11 @@
 - (IBAction)AnswerButtonB:(id)sender;
 - (IBAction)AnswerButtonC:(id)sender;
 - (IBAction)AnswerButtonD:(id)sender;
+- (IBAction)SkipButton:(id)sender;
 
+@property (strong, nonatomic) IBOutlet UIButton *skipButton;
 @property (strong, nonatomic) IBOutlet UIButton *backButton;
-@property (strong, nonatomic) IBOutlet UILabel *QuestionTitleButton;
+@property (strong, nonatomic) IBOutlet UILabel *QuestionTitleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *AnswerLabelA;
 @property (strong, nonatomic) IBOutlet UILabel *AnswerLabelB;
 @property (strong, nonatomic) IBOutlet UILabel *AnswerLabelC;
@@ -30,7 +32,6 @@
 @property (strong, nonatomic) NSString *questionType;
 @property (strong, nonatomic) NSArray *questions;
 @property (strong, nonatomic) NSString *answer;
-@property (nonatomic) int numberCorrect;
 @property (nonatomic) int currentQuestion;
 @property (nonatomic) int Score;
 
