@@ -53,7 +53,7 @@
 	// Do any additional setup after loading the view.
     [self resourcetype:self.questionType];
     self.backButton.hidden = YES;
-    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"images.jpeg"]];
 }
 
 - (void)loadQuestion
@@ -79,12 +79,12 @@
         float percent = (((float) self.numberAttended / self.total)*100);
         if (percent == INFINITY)
         {
-            self.ScoreLabel.text = [NSString stringWithFormat:@"Score: %i  progress: 0.00", self.Score];
+            self.ScoreLabel.text = [NSString stringWithFormat:@"Score: 0/0  progress: 0.00"];
 
         }
         else
         {
-        self.ScoreLabel.text = [NSString stringWithFormat:@"Score: %i  progress: %.2f", self.Score, percent];
+        self.ScoreLabel.text = [NSString stringWithFormat:@"Score: %i/%i  progress: %.2f", self.Score, self.total, percent];
         }
         
         NSDictionary *nextQuestion = [self.questions objectAtIndex:self.currentQuestion];
@@ -119,7 +119,11 @@
     {
         UIAlertView *gameOver = [[UIAlertView alloc]initWithTitle:@"Finished" message:@"Hurray! No more Questions" delegate:Nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
         [gameOver show];
-        
+        float percent = (((float) self.numberAttended / self.total)*100);
+        if (percent != INFINITY)
+        {
+            self.ScoreLabel.text = [NSString stringWithFormat:@"Score: %i/%i  progress: %.2f", self.Score, self.total, percent];
+        }
         self.ButtonA.hidden = YES;
         self.ButtonB.hidden = YES;
         self.ButtonC.hidden = YES;
