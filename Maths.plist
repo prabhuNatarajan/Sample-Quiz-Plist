@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Title</key>
+		<string>World is ______?</string>
+		<key>A</key>
+		<string>Flat</string>
+		<key>B</key>
+		<string>Square</string>
+		<key>C</key>
+		<string>Round</string>
+		<key>D</key>
+		<string>Spherical</string>
+		<key>Ans</key>
+		<string>D</string>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Do you see two Answers?</string>
+		<key>A</key>
+		<string>Yes</string>
+		<key>B</key>
+		<string>No</string>
+		<key>Ans</key>
+		<string>A</string>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>3*2 ?</string>
+		<key>A</key>
+		<string>2</string>
+		<key>B</key>
+		<string>6</string>
+		<key>Ans</key>
+		<string>B</string>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>2+1 ?</string>
+		<key>A</key>
+		<string>2</string>
+		<key>B</key>
+		<string>1</string>
+		<key>C</key>
+		<string>3</string>
+		<key>D</key>
+		<string>4</string>
+		<key>Ans</key>
+		<string>C</string>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>1+1 ?</string>
+		<key>A</key>
+		<string>2</string>
+		<key>B</key>
+		<string>3</string>
+		<key>C</key>
+		<string>-1</string>
+		<key>Ans</key>
+		<string>A</string>
+	</dict>
+</array>
+</plist>

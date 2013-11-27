@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Title</key>
+		<string>Apple is a ___?</string>
+		<key>A</key>
+		<string>Fruit</string>
+		<key>B</key>
+		<string>Meat</string>
+		<key>C</key>
+		<string>Vegetable</string>
+		<key>Ans</key>
+		<string>A</string>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Lion is an ___?</string>
+		<key>A</key>
+		<string>Pet</string>
+		<key>B</key>
+		<string>WildAnimal</string>
+		<key>C</key>
+		<string>Flower</string>
+		<key>D</key>
+		<string>Friut</string>
+		<key>Ans</key>
+		<string>B</string>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Which of the following animal runs Faster?</string>
+		<key>A</key>
+		<string>Rabbit</string>
+		<key>B</key>
+		<string>Lion</string>
+		<key>C</key>
+		<string>Cheataw</string>
+		<key>D</key>
+		<string>Tortoise</string>
+		<key>Ans</key>
+		<string>C</string>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Cat drinks ___?</string>
+		<key>A</key>
+		<string>Milk</string>
+		<key>B</key>
+		<string>Soda</string>
+		<key>Ans</key>
+		<string>A</string>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Which Animal has Poison in it?</string>
+		<key>A</key>
+		<string>Tiger</string>
+		<key>B</key>
+		<string>Snake</string>
+		<key>Ans</key>
+		<string>B</string>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string>Which Insect collects Honey?</string>
+		<key>A</key>
+		<string>Honey Bee</string>
+		<key>B</key>
+		<string>Bugs</string>
+		<key>Ans</key>
+		<string>A</string>
+	</dict>
+</array>
+</plist>
